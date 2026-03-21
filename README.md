@@ -2,8 +2,6 @@
   <img src="banner.png" alt="Avoid Slop" width="100%">
 </p>
 
-# Avoid Slop
-
 A curated directory of open-source tools and techniques for eliminating AI-generated slop from text, code, and design.
 
 AI models have defaults they collapse toward — the same phrases, the same layouts, the same color palettes. These tools fight that.
