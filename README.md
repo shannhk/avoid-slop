@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/banner.png" alt="Avoid Slop banner" width="100%" />
+</p>
+
 # Avoid Slop
 
 A curated directory of open-source tools and techniques for eliminating AI-generated slop from text, code, and design.
