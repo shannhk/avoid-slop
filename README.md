@@ -14,9 +14,9 @@ AI models have defaults they collapse toward. The same phrases, the same layouts
 
 An agent skill that removes signs of AI-generated writing from text. By blader. MIT. 10,300+ stars.
 
-Based on Wikipedia's "Signs of AI writing" guide, maintained by WikiProject AI Cleanup. Covers 25 pattern categories: inflated significance, promotional language, superficial -ing analyses, vague attributions, AI vocabulary words, em dash overuse, rule of three, negative parallelisms, sycophantic tone, filler phrases, and more.
+> Based on Wikipedia's "Signs of AI writing" guide, maintained by WikiProject AI Cleanup. Covers 25 pattern categories: inflated significance, promotional language, superficial -ing analyses, vague attributions, AI vocabulary words, em dash overuse, rule of three, negative parallelisms, sycophantic tone, filler phrases, and more.
 
-Install with `npx skills add blader/humanizer@humanizer -g -y` or clone directly into your skills directory. Works as a slash command (`/humanizer`) in Claude Code and other agents.
+`npx skills add blader/humanizer@humanizer -g -y` or clone directly into your skills directory. Works as a slash command (`/humanizer`) in Claude Code and other agents.
 
 What sets it apart from a simple word blocklist: it runs a two-pass audit. First rewrite, then it asks "what makes this obviously AI generated?" about its own output and revises again. The self-critique loop catches patterns that survive the first edit.
 
@@ -28,7 +28,7 @@ Also pushes you to add voice, not just remove slop. Sterile, voiceless writing i
 
 A skill file for removing AI tells from prose. By Hardik Pandya. MIT. 2,100+ stars.
 
-About 30 banned phrases across 7 categories (throat-clearing openers, emphasis crutches, business jargon, adverbs, meta-commentary), 8 banned structural patterns, and a scoring rubric that triggers revision when writing scores below 35/50.
+> About 30 banned phrases across 7 categories (throat-clearing openers, emphasis crutches, business jargon, adverbs, meta-commentary), 8 banned structural patterns, and a scoring rubric that triggers revision when writing scores below 35/50.
 
 Drop the skill file into Claude Projects, custom instructions, or API system prompts. No build step, no dependencies.
 
@@ -42,7 +42,7 @@ Em-dashes are categorically banned. Not "use sparingly." Banned.
 
 Detects a model's default patterns empirically, then generates a custom avoidance profile. By Matt Shumer. MIT. 180+ stars.
 
-Generates 50+ domain-specific outputs from a model, runs statistical analysis on recurring defaults, and writes a custom `skill.md` telling the model what to avoid. Visual mode screenshots HTML outputs to catch CSS/layout/color cliches too.
+> Generates 50+ domain-specific outputs from a model, runs statistical analysis on recurring defaults, and writes a custom `skill.md` telling the model what to avoid. Visual mode screenshots HTML outputs to catch CSS/layout/color cliches too.
 
 Clone the repo, set up a Python venv, run `python3 unslop.py --domain "blog writing"`. Ships with prebuilt profiles for writing and React design.
 
@@ -56,7 +56,7 @@ The philosophy is anti-prescription. Telling a model to write "better" just crea
 
 A design language and command toolkit for making AI-generated frontends look human-designed. By Paul Bakaus. Apache 2.0. 11,700+ stars.
 
-Loads design expertise (typography, color theory, spatial design, motion, interaction design) as persistent LLM context. Has 20 slash commands (`/audit`, `/polish`, `/critique`, `/bolder`, `/quieter`, `/colorize`, `/animate`, `/overdrive`) for steering design quality. The `/critique` command runs an "AI Slop Detection" check as its first pass.
+> Loads design expertise (typography, color theory, spatial design, motion, interaction design) as persistent LLM context. Has 20 slash commands (`/audit`, `/polish`, `/critique`, `/bolder`, `/quieter`, `/colorize`, `/animate`, `/overdrive`) for steering design quality. The `/critique` command runs an "AI Slop Detection" check as its first pass.
 
 Install from [impeccable.style](https://impeccable.style) or copy from the repo. Works with Claude Code, Cursor, Gemini CLI, Codex CLI, VS Code Copilot, and more.
 
