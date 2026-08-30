@@ -148,6 +148,24 @@ Uniform sentence length is treated as the single most measurable detection signa
 
 ---
 
+### [Zero Slop](https://github.com/manavmishra/ZeroSlop)
+
+Scores a draft 0-100 for AI slop, then edits it under a fact gate that can reject the rewrite. By Manav Mishra. MIT. 13 stars.
+
+> 290 weighted patterns and a 96-term lexicon: binary contrasts, throat-clearing openers, faux-insight setups, colon reveals, dramatic fragments, importance puffery, weasel attribution, synonym cycling, and marketing riders that only score beside a marketing trigger. A separate reading pass covers document-level defects no span pattern reaches: one sentence shape repeated seven times, statistics piled into a paragraph, paragraphs that shuffle without loss.
+
+`npx skills add manavmishra/ZeroSlop --global`
+
+The distinctive part is that the fact gate is a program, not an instruction. Any rewrite that adds or drops a name, number, quotation, link, code block, table or path is rejected and redone. The model is never trusted to have preserved the facts; a local check decides, and it fails the pass rather than warning.
+
+The score is deliberately not a detector, and the README keeps saying so. Human writing in its own corpus scores 9 to 21 and unedited AI drafts average 77, but neither number identifies who wrote anything. Eight editorial roles run as separate passes so nothing grades its own output.
+
+Everything local runs offline on Python's standard library. No account, no network call. `slopscore.py --batch drafts/ --gate 25` fails a build above the threshold, so it works as a CI check rather than only an interactive skill.
+
+The repo also publishes a same-model replay against several tools in this list. Drafts, mappings and hashes are committed, so it can be rerun and disputed. It is self-run, so read it as a regression study and not an independent ranking.
+
+---
+
 ## Code and design
 
 ### [unslop](https://github.com/mshumer/unslop) (empirical profiler)
@@ -206,6 +224,7 @@ Meant to be copied into the repo and owned. Read the rules. Change them.
 | anti-slop (elithrar) | Prose | Surgical review, slop vs voice | False positive that flattens is worse than a leftover tell |
 | humanize (soundshuman) | Prose + CI | Skill + JSON rules + `sloplint` | Repo-wide score and CI gate, no LLM required |
 | anti-ai-slop-writing | Prose | Generation-time bans | Constraints before the draft, not after |
+| Zero Slop | Prose | 0-100 score, fact gate, reading pass | Rewrite is rejected if a name or number moves |
 | unslop (Shumer) | Text, visual, code | Empirical profiling | Measure the model's defaults, then suppress them |
 | impeccable | Frontend UI/UX | Design expertise injection | "Would a viewer identify this as AI-made?" |
 | anti-slop (Oxlint) | TypeScript / JS | Vendored lint rules | Reject type laundering at compile time |
